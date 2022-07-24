@@ -271,5 +271,5 @@ int main(){
         printf("Month Number %d is 30 days",mn);
     else
         printf("Month Number %d is 31 days",mn);
-   
+   return 0;
 }
