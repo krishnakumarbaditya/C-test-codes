@@ -58,6 +58,22 @@ int main()
     }
     printf("HCF is %d",hc);
     printf("\n");
+    
+    // 5. Write a program to check whether two given numbers are co-prime numbers or not
+    int k,k1,k2,min;
+    printf("Enter two numbers ");
+    scanf("%d %d",&k,&k1);
+    min=k<k1?k:k1;
+    for(k2=2;k2<=min;k2++)
+    {
+        if(k%k2==0 && k1%k2==0)
+            break;
+    }
+    if(k2==min+1)
+        printf("%d and %d are co-prime numbers",k,k1);
+    else
+        printf("%d and %d are not co-prime numbers",k,k1);
+    printf("\n");
 
     // 6.Write a program to print all Prime numbers under 100
     int no9,i6,count;
