@@ -27,6 +27,20 @@ int main()
         printf("%d\t",c1);
     }
     printf("\n");
+    
+    // 3. Write a program to check whether a given number is there in the Fibonacci series or not.
+    int a5,b5,a6,b6,n5;
+    printf("Enter a number ");
+    scanf("%d",&n5);
+    a5=(5*pow(n5,2)+4);
+    b5=(5*pow(n5,2)-4);
+    a6=(int)sqrt(a5);
+    b6=(int)sqrt(b5);
+    if(a6*a6==a5 || b6*b6==b5)
+        printf("%d is in Fibonacci series",n5);
+    else
+        printf("%d is in not in Fibonacci series",n5);
+    printf("\n");
 
     // 4. Write a program to calculate HCF of two numbers
     int a2,b2,i2=1;
@@ -61,6 +75,35 @@ int main()
         if(count==0 && no9!=1)
             printf("%d\n",no9);        
     } 
+    
+    // 7. Write a program to print all Prime numbers between two given numbers
+    int l,u,g,h;
+    printf("Enter two numbers ");
+    scanf("%d %d",&l,&u);
+    for(g=l+1;g<=u-1;g++)
+    {
+        for(h=2;h<g;h++)
+            if(g%h==0)
+                break;
+        if(g==h)
+            printf("%d\n",g);
+    }
+    printf("\n");
+
+    // 8. Write a program to find next Prime number of a given number
+    int j,j1,j2;
+    printf("Enter a number ");
+    scanf("%d",&j);
+    for(j1=j+1;j1>=j;j1++)
+    {
+        for(j2=2;j2<j1;j2++)
+            if(j1%j2==0)
+                break;
+        if(j1==j2)
+            break;
+    }
+    printf("%d is the next prime number of %d",j1,j);
+    printf("\n");
 
     // 9. Write a program to check whether a given number is an Armstrong number or not
     int n2,n3,rem1,sum1=0;
