@@ -126,3 +126,48 @@ int fact(int no1)
     }
     return fact1;
 }
+
+/*
+7. Write a function to calculate the number of combinations one can make from n items
+and r selected at a time. (TSRS)
+*/
+#include<stdio.h>
+int combination(int ,int ,int );
+int main()
+{
+    int n,r,a,comb1;
+    printf("calculate the number of combinations one can make from n items and r selected at a time.\n");
+    printf("Enter the number for n and r ");
+    scanf("%d %d",&n,&r);
+    a=n-r;
+    comb1=combination(n,r,a);
+    printf("combinations one can make from %d items and %d selected at a time is %d",n,r,comb1);
+
+}
+int combination(int n,int r,int a)
+{
+    int n1=1;
+    while(n)
+    {
+        n1=n1*n;
+        n--;
+    }
+
+    int r1=1;
+    while(r)
+    {
+        r1=r1*r;
+        r--;
+    }
+
+    int a1=1;
+    while(a)
+    {
+        a1=a1*a;
+        a--;
+    }
+
+    int comb;
+    comb=n1/(a1*r1);
+    return comb;
+}
