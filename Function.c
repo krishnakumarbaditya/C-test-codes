@@ -76,6 +76,7 @@ int main()
     printf("Enter the number ");
     scanf("%d",&no);
     natural(no);
+    return 0;
 }
 void natural(int no1)
 {
@@ -95,6 +96,7 @@ int main()
     printf("Enter the number ");
     scanf("%d",&no);
     odd(no);
+    return 0;
 }
 void odd(int no1)
 {
@@ -115,6 +117,7 @@ int main()
     scanf("%d",&no);
     fact2=fact(no);
     printf("Factorial of %d is %d",no,fact2);
+    return 0;
 }
 int fact(int no1)
 {
@@ -142,7 +145,7 @@ int main()
     a=n-r;
     comb1=combination(n,r,a);
     printf("combinations one can make from %d items and %d selected at a time is %d",n,r,comb1);
-
+    return 0;
 }
 int combination(int n,int r,int a)
 {
@@ -170,4 +173,68 @@ int combination(int n,int r,int a)
     int comb;
     comb=n1/(a1*r1);
     return comb;
+}
+
+//9. Write a function to check whether a given number contains a given digit or not. (TSRS)
+#include<stdio.h>
+int check();
+int no2;
+int main()
+{
+    int no,check1;
+    printf("check whether a given number contains a given digit or not.\n");
+    no=235;
+    printf("Given number is %d\n",no);
+    printf("Enter the number to check ");
+    scanf("%d",&no2);
+    check1=check(no);
+    if(check1==1)
+        printf("Digit is their in number.");
+    else
+        printf("Digit is not their in number.");
+    return 0;
+
+}
+int check(int no1)
+{
+    int rem;
+    while(no1)
+    {
+        rem=no1%10;
+        if(rem==no2)
+            break;
+        no1=no1/10;
+    }
+    if(rem==no2)
+        return 1;
+    else
+        return 0;
+}
+
+/*
+10. Write a function to print all prime factors of a given number. For example, if the
+number is 36 then your result should be 2, 2, 3, 3. (TSRN)
+*/
+#include<stdio.h>
+void prime();
+int main()
+{
+    int no;
+    printf("Enter a number ");
+    scanf("%d",&no);
+    prime(no);
+    return 0;
+}
+void prime(int no1)
+{
+    int i;
+    for(i=2;no1>1;i++)
+    {
+        while(no1%i==0)
+        {
+            printf("%d\t",i);
+            no1=no1/i;
+        }
+    }
+
 }
