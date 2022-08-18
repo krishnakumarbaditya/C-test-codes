@@ -183,6 +183,59 @@ int main()
     Fibonacci(no);
     return 0;
 }
+void Fibonacci(int no2)
+{
+    int a,b,c;
+    a=-1;
+    b=1;
+    while(no2)
+    {
+        c=a+b;
+        a=b;
+        b=c;
+        printf("%d\n",c);
+        no2--;
+    }
+}
+
+//8. Write a function to print PASCAL Triangle. (TSRN)
+#include<stdio.h>
+void pascal(int);
+int fact(int);
+int comb(int,int);
+int main()
+{
+
+    pascal(3);
+    return 0;
+}
+int fact(int n)
+{
+    int i,fact=1;
+    for(i=1;i<=n;i++)
+        fact=fact*i;
+    return fact;
+}
+int comb(int n,int r)
+{
+    return fact(n)/(fact(r)*fact(n-r));
+}
+void pascal(int n)
+{
+    int i,j;
+    for(i=0;i<=n;i++)
+    {
+        for(j=0;j<=n-i;j++)
+        {
+            printf(" ");
+        }
+        for(j=0;j<=i;j++)
+        {
+            printf("%d ",comb(i,j));
+        }
+        printf("\n");
+    }
+}
 
 //9. Write a program in C to find the square of any number using the function.
 
@@ -206,20 +259,7 @@ int square(double no2)
     return sq;
 }
 
-void Fibonacci(int no2)
-{
-    int a,b,c;
-    a=-1;
-    b=1;
-    while(no2)
-    {
-        c=a+b;
-        a=b;
-        b=c;
-        printf("%d\n",c);
-        no2--;
-    }
-}
+
 
 //10.Write a program in C to find the sum of the series 1! /1+2!/2+3!/3+4!/4+5!/5 using the function
 #include<stdio.h>
