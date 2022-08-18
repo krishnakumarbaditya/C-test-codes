@@ -175,6 +175,43 @@ int combination(int n,int r,int a)
     return comb;
 }
 
+/*
+8. Write a function to calculate the number of arrangements one can make from n items
+and r selected at a time. (TSRS)
+*/
+#include<stdio.h>
+int arrangements(int ,int );
+int main()
+{
+    int n,r,arrng1;
+    printf("calculate the number of arrangements one can make from n items and r selected at a time.\n");
+    printf("Enter the number for n and r ");
+    scanf("%d %d",&n,&r);
+    arrng1=arrangements(n,r);
+    printf("arrangements one can make from %d items and %d selected at a time is %d",n,r,arrng1);
+    return 0;
+}
+int arrangements(int n,int r)
+{
+    int n1=1;
+    while(n)
+    {
+        n1=n1*n;
+        n--;
+    }
+
+    int r1=1;
+    while(r)
+    {
+        r1=r1*r;
+        r--;
+    }
+    int arrng;
+    arrng=n1/r1;
+    return arrng;
+}
+
+
 //9. Write a function to check whether a given number contains a given digit or not. (TSRS)
 #include<stdio.h>
 int check();
