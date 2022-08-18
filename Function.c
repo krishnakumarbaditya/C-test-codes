@@ -191,23 +191,20 @@ int main()
     printf("arrangements one can make from %d items and %d selected at a time is %d",n,r,arrng1);
     return 0;
 }
+int fact(int no1)
+{
+    int fact1=1;
+    while(no1)
+    {
+        fact1=fact1*no1;
+        no1--;
+    }
+    return fact1;
+}
 int arrangements(int n,int r)
 {
-    int n1=1;
-    while(n)
-    {
-        n1=n1*n;
-        n--;
-    }
-
-    int r1=1;
-    while(r)
-    {
-        r1=r1*r;
-        r--;
-    }
     int arrng;
-    arrng=n1/r1;
+    arrng=fact(n)/fact(n-r);
     return arrng;
 }
 
