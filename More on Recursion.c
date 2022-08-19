@@ -134,6 +134,29 @@ int fact(int no1)
     fact1=no1*fact(no1-1);
 }
 
+//7. Write a recursive function to calculate HCF of two numbers
+#include<stdio.h>
+int HCF(int,int);
+int main()
+{
+    int no,no1;
+    printf("calculate HCF of two numbers ");
+    scanf("%d %d",&no,&no1);
+    printf("%d",HCF(no,no1));
+    return 0;
+}
+int HCF(int no1,int no2)
+{
+    if(no1%no2==0)
+        return no2;
+    else if(no2%no1==0)
+        return no1;
+    if(no1>no2)
+        HCF(no1%no2,no2);
+    else
+        HCF(no1,no2%no1);
+}
+
 //8. Write a recursive function to print first N terms of Fibonacci series
 #include<stdio.h>
 int fib(int);
