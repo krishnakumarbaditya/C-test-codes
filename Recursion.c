@@ -198,3 +198,24 @@ void dtoO(int n)
     }
 
 }
+
+//10. Write a recursive function to print reverse of a given number
+#include<stdio.h>
+int reverse(int,int);
+int main()
+{
+    int x;
+    printf("Enter a number.");
+    scanf("%d",&x);
+    int c=reverse(x,0);
+    printf("Reverse number of %d is %d",x,c);
+}
+int reverse(int n,int r)
+{
+
+    if(n==0)
+        return r;
+    else
+        return reverse(n/10,r*10+n%10);
+
+}
