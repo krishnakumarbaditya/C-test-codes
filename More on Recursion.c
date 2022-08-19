@@ -179,3 +179,48 @@ int fib(int no1)
         return no1;
     return (fib(no1-1)+fib(no1-2));
 }
+
+
+//9. Write a program in C to count the digits of a given number using recursion.
+#include<stdio.h>
+int digit(int);
+int main()
+{
+    int no;
+    printf("count the digits of a given number using recursion. ");
+    scanf("%d",&no);
+    printf("The number of digits in the number is : %d",digit(no));
+    return 0;
+}
+int digit(int no1)
+{
+    static int count=0;
+    if(no1!=0)
+    {
+        count++;
+        digit(no1/10);
+    }
+    return count;
+
+}
+
+//10. Write a program in C to calculate the power of any number using recursion.
+#include<stdio.h>
+int power(int,int);
+int main()
+{
+    int no,base;
+    printf("calculate the power of any number using recursion.\n");
+    printf("Enter base and power");
+    scanf("%d %d",&base,&no);
+    printf("power of any number is : %d",power(base,no));
+    return 0;
+}
+int power(int base,int no1)
+{
+    if(no1!=0)
+        return (base*power(base,no1-1));
+    else
+        return 1;
+
+}
