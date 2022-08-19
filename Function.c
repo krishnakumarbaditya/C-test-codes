@@ -272,28 +272,3 @@ void prime(int no1)
     }
 
 }
-
-//10.Write a program in C to find the sum of the series 1! /1+2!/2+3!/3+4!/4+5!/5 using the function
-#include<stdio.h>
-#include<math.h>
-int square(double);
-int main()
-{
-    int no,sum;
-
-    printf("find the sum of 1!/1+2!/2+3!/3+4!/4+5!/5 :\n");
-    printf("----------------------------------------------\n");
-    sum=fact(1)/1+fact(2)/2+fact(3)/3+fact(4)/4+fact(5)/5;
-    printf("sum of factorial is %d",sum);
-    return 0;
-}
-int fact(int no1)
-{
-    int fact1=1;
-    while(no1)
-    {
-        fact1=fact1*no1;
-        no1--;
-    }
-    return fact1;
-}
