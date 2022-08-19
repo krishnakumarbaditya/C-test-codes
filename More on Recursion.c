@@ -133,3 +133,26 @@ int fact(int no1)
         return 1;
     fact1=no1*fact(no1-1);
 }
+
+//8. Write a recursive function to print first N terms of Fibonacci series
+#include<stdio.h>
+int fib(int);
+int main()
+{
+    int no;
+    printf("print first N terms of Fibonacci series ");
+    scanf("%d",&no);
+    for(int n=1;n<=no;n++)
+    {
+        printf("%d\t",fib(n));
+    }
+
+    return 0;
+}
+int fib(int no1)
+{
+    int c;
+    if(no1==0 || no1==1)
+        return no1;
+    return (fib(no1-1)+fib(no1-2));
+}
