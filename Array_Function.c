@@ -87,6 +87,47 @@ void sort(int b[],int n)
 }
 
 /*
+4. Write a function to rotate an array by n position in d direction. The d is an indicative
+value for left or right. (For example, if array of size 5 is [32, 29, 40, 12, 70]; n is 2 and
+d is left, then the resulting array after left rotation 2 times is [40, 12, 70, 32, 29] )
+*/
+#include<stdio.h>
+void rotate(int[],int);
+int main()
+{
+    int a[5]={32, 29, 40, 12, 70};
+    rotate(a,5);
+    return 0;
+}
+void rotate(int b[],int n)
+{
+    int i,j;
+    int d=2;
+
+   /* printf("Enter the elements in array.\n");
+    for(i=0;i<n;i++)
+        scanf("%d",&b[i]);*/
+    printf("All elements in the array.\n");
+    for(i=0;i<n;i++)
+        printf("%d\t",b[i]);
+
+    printf("\nAfter rotating %d times.\n",d);
+    for(i=0;i<d;i++)
+    {
+        int first=b[0];
+
+        for(j=0;j<n-1;j++)
+        {
+            b[j]=b[j+1];
+        }
+        b[j]=first;
+    }
+    for(j=0;j<n;j++)
+        printf("%d\t",b[j]);
+}
+
+
+/*
 6. Write a function in C to read n number of values in an array and display it in reverse
 order.
 */
