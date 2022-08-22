@@ -113,3 +113,81 @@ void reverse(int b[],int n)
 
     return 0;
 }
+
+/*
+7. Write a function in C to count a total number of duplicate elements in an array.
+*/
+#include<stdio.h>
+int count(int[],int);
+int main()
+{
+    int a[5];
+    printf("\nTotal number of duplicate elements in an array %d.",count(a,5));
+    return 0;
+}
+int count(int b[],int n)
+{
+    int i,j;
+
+    printf("Enter the elements in array.\n");
+    for(i=0;i<n;i++)
+        scanf("%d",&b[i]);
+    printf("\nAll elements in the array.\n");
+    for(i=0;i<n;i++)
+        printf("%d\t",b[i]);
+    int count=0;
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(b[i]==b[j])
+            {
+                count++;
+                break;
+            }
+        }
+    }
+    return count;
+}
+
+
+/*
+8. Write a function in C to print all unique elements in an array.
+*/
+#include<stdio.h>
+void unique(int[],int);
+int main()
+{
+    int a[5];
+    unique(a,5);
+    return 0;
+}
+void unique(int b[],int n)
+{
+    int i,j;
+    printf("Enter the elements in array.\n");
+    for(i=0;i<n;i++)
+        scanf("%d",&b[i]);
+    printf("\nAll elements in the array.\n");
+    for(i=0;i<n;i++)
+        printf("%d\t",b[i]);
+
+    printf("\nPrint all unique elements in an array.\n");
+    for(i=0;i<n;i++)
+    {
+        int count=0;
+        for(j=0;j<n;j++)
+        {
+            if(b[i]==b[j])
+            {
+                count++;
+                if(count<=1)
+                    continue;
+                else
+                    break;
+            }
+        }
+        if(count==1)
+            printf("%d\t",b[i]);
+    }
+}
