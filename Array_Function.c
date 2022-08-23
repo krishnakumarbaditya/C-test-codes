@@ -103,10 +103,6 @@ void rotate(int b[],int n)
 {
     int i,j;
     int d=2;
-
-   /* printf("Enter the elements in array.\n");
-    for(i=0;i<n;i++)
-        scanf("%d",&b[i]);*/
     printf("All elements in the array.\n");
     for(i=0;i<n;i++)
         printf("%d\t",b[i]);
@@ -124,6 +120,36 @@ void rotate(int b[],int n)
     }
     for(j=0;j<n;j++)
         printf("%d\t",b[j]);
+}
+
+/*
+5. Write a function to find the first occurrence of adjacent duplicate values in the array.
+Function has to return the value of the element.
+*/
+#include<stdio.h>
+int adj_dup(int[],int);
+int main()
+{
+    int a[5];
+    printf("\n%d is the first occurrence of adjacent duplicate values in the array.",adj_dup(a,5));
+    return 0;
+}
+int adj_dup(int b[],int n)
+{
+    int i,j;
+
+    printf("Enter the elements in array.\n");
+    for(i=0;i<n;i++)
+        scanf("%d",&b[i]);
+    printf("All elements in the array.\n");
+    for(i=0;i<n;i++)
+        printf("%d\t",b[i]);
+
+    for(j=0;j<n;j++)
+    {
+        if(b[j]==b[j+1])
+            return b[j];
+    }
 }
 
 
@@ -230,5 +256,95 @@ void unique(int b[],int n)
         }
         if(count==1)
             printf("%d\t",b[i]);
+    }
+}
+
+//9. Write a function in C to merge two arrays of the same size sorted in descending order.#
+#include<stdio.h>
+int main()
+{
+    int a[]={1,4,5,6,8};
+    int b[]={2,3,7,9,10};
+    int c[10];
+
+    int k=0,i=0,j=0;
+    for(k=0;k<10;k++)
+    {
+        if(i>=5)
+        {
+            while(k<10)
+            {
+                c[k]=b[j];
+                j++;
+                k++;
+                if(k==10)
+                    break;
+            }
+        }
+        else if(j>=5)
+        {
+            while(k<10)
+            {
+                c[k]=b[i];
+                i++;
+                k++;
+                if(k==10)
+                    break;
+            }
+        }
+
+        else if(a[i]<b[j])
+        {
+            c[k]=a[i];
+            i++;
+        }
+        else
+        {
+            c[k]=b[j];
+            j++;
+        }
+    }
+    for(k=0;k<10;k++)
+        printf("%d ",c[k]);
+
+}
+
+//10. Write a function in C to count the frequency of each element of an array.
+#include<stdio.h>
+void count(int[],int[],int);
+int main()
+{
+    int a[5]={10,20,10,20,50};
+    int b[5];
+    count(a,b,5);
+    return 0;
+}
+void count(int a[],int b[],int n)
+{
+    int i,j,c=0;
+    for(i=0; i<n; i++)
+    {
+        c=1;
+        if(a[i]!=-1)
+        {
+            for(j=i+1; j<n; j++)
+
+            {
+               if(a[i]==a[j])
+                {
+                   c++;
+                   a[j]=-1;
+               }
+           }
+           b[i]=c;
+        }
+    }
+    for(i=0; i<n; i++)
+    {
+         if(a[i]!=-1)
+        {
+            printf("no of %d is %d \n",a[i],b[i]);
+
+        }
     }
 }
