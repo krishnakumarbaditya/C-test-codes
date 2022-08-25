@@ -43,8 +43,8 @@ int main()
     for(i=0;i<3;i++)
     {
         for(j=0;j<3;j++)
-        {
-            c[i][j]=a[i][j]+b[i][j];
+        {         
+            c[i][j]=a[i][j]+b[i][j];      
         }
     }
     for(i=0;i<3;i++)
@@ -55,6 +55,7 @@ int main()
         }
         printf("\n");
     }
+    return 0;
 }
 
 //2. Write a program to calculate the product of two matrices each of order 3x3.
@@ -63,7 +64,7 @@ int main()
 int main()
 {
     int a[3][3],b[3][3],c[3][3];
-    int i,j;
+    int i,j,k,sum=0;
     printf("Enter the number first matrices.\n");
     for(i=0;i<3;i++)
     {
@@ -103,7 +104,12 @@ int main()
     {
         for(j=0;j<3;j++)
         {
-            c[i][j]=a[i][j]*b[i][j];
+            for(k=0;k<3;k++)
+            {
+                sum=sum+(a[i][k]*b[k][j]);
+            }
+            c[i][j]=sum;
+            sum=0;
         }
     }
     for(i=0;i<3;i++)
