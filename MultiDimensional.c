@@ -172,7 +172,7 @@ int main()
 #include<stdio.h>
 int main()
 {
-    int a[3][3],b[3][3];
+    int a[3][3];
     int i,j,sum=0;
     printf("Enter the number of elements in matrices.\n");
     for(i=0;i<3;i++)
@@ -212,7 +212,7 @@ int main()
 #include<stdio.h>
 int main()
 {
-    int a[3][3],b[3][3];
+    int a[3][3];
     int i,j,sum=0;
     printf("Enter the number of elements in matrices.\n");
     for(i=0;i<3;i++)
@@ -253,7 +253,7 @@ int main()
 #include<stdio.h>
 int main()
 {
-    int a[3][3],b[3][3];
+    int a[3][3];
     int i,j,rsum=0,csum=0;
     printf("Enter the number of elements in matrices.\n");
     for(i=0;i<3;i++)
@@ -301,8 +301,8 @@ int main()
 #include<stdio.h>
 int main()
 {
-    int a[3][3],b[3][3];
-    int i,j,rsum=0,csum=0;
+    int a[3][3];
+    int i,j;
     printf("Enter the number of elements in matrices.\n");
     for(i=0;i<3;i++)
     {
@@ -348,8 +348,8 @@ int main()
 #include<stdio.h>
 int main()
 {
-    int a[3][3],b[3][3];
-    int i,j,rsum=0,csum=0;
+    int a[3][3];
+    int i,j;
     printf("Enter the number of elements in matrices.\n");
     for(i=0;i<3;i++)
     {
