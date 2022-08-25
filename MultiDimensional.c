@@ -389,3 +389,90 @@ int main()
 
     return 0;
 }
+
+//9. Write a program in C to accept a matrix and determine whether it is a sparse matrix.
+
+#include<stdio.h>
+int main()
+{
+    int a[3][3],b[3][3];
+    int i,j,rsum=0,csum=0;
+    printf("Enter the number of elements in matrices.\n");
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    printf("Number of elements in given matrix.\n");
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d\t",a[i][j]);
+        }
+        printf("\n");
+    }
+
+    int count=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(a[i][j]!=0)
+                count++;
+        }
+    }
+    if(count<9/2.0)
+        printf("Matrix is sparse matrix.");
+    else
+        printf("Matrix is not a sparse matrix.");
+
+    return 0;
+}
+
+//10. Write a program in C to find the row with maximum number of 1s.
+#include<stdio.h>
+int main()
+{
+    int a[3][3],b[3][3];
+    int i,j,rsum=0,csum=0;
+    printf("Enter the number of elements in matrices.\n");
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    printf("Number of elements in given matrix.\n");
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d\t",a[i][j]);
+        }
+        printf("\n");
+    }
+
+    int max=0,sum=0,index;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(a[i][j]==1)
+                sum=sum+a[i][j];
+        }
+        if(sum>max)
+        {
+            max=sum;
+            index=i+1;
+        }
+        sum=0;
+    }
+    printf("Row with maximum number of 1's is %d row.",index);
+
+
+    return 0;
+}
