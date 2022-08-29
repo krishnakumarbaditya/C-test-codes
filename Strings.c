@@ -126,3 +126,86 @@ int main()
     printf("Reverse string is %s.",c);
     return 0;
 }
+
+//7. Write a program in C to count the total number of alphabets, digits and special characters in a string.
+#include<stdio.h>
+int main()
+{
+    char c[10];
+    int i;
+    printf("Count the total number of alphabets, digits and special characters in a string.\n");
+    printf("Enter a string\n");
+    scanf("%s",c);
+    fflush(stdin);
+    printf("Given string is %s.\n",c);
+
+    int count=0;
+    int count1=0;
+    int count2=0;
+
+    for(i=0;c[i];i++)
+    {
+        if((c[i]>='a' && c[i]<='z') || (c[i]>='A' && c[i]<='Z'))
+            count++;
+        else if(c[i]>='0' && c[i]<='9')
+            count1++;
+        else
+            count2++;
+
+    }
+    printf("Total number of alphabets %d.\n",count);
+    printf("Total  digits in a string %d.\n",count1);
+    printf("Total  special characters in a string %d.",count2);
+    return 0;
+}
+
+//8. Write a program in C to copy one string to another string.
+#include<stdio.h>
+int main()
+{
+    char c[10],c1[10];
+    int i;
+    printf("copy one string to another string.\n");
+    printf("Enter 1st array string\n");
+    scanf("%s",c);
+    fflush(stdin);
+    printf("Given string in 1st array is %s.\n",c);
+
+    for(i=0;c[i];i++)
+    {
+        c1[i]=c[i];
+    }
+    printf("String of 1st array in 2nd array is %s.\n",c1);
+
+    return 0;
+}
+
+//9. Write a C program to sort a string array in ascending order.
+#include<stdio.h>
+int main()
+{
+    char c[10];
+    int i,j;
+    printf("sort a string array in ascending order.\n");
+    printf("Enter a string\n");
+    scanf("%s",c);
+    fflush(stdin);
+    printf("Before sorting the array %s.\n",c);
+    char temp;
+    for(i=0;c[i];i++);
+    int len=i;
+    for(j=1;j<len;j++)
+    {
+        for(i=0;i<len-j;i++)
+        {
+            if(c[i]>c[i+1])
+            {
+                temp=c[i];
+                c[i]=c[i+1];
+                c[i+1]=temp;
+            }
+        }
+    }
+    printf("after sorting the array in ascending order is %s.\n",c);
+    return 0;
+}
