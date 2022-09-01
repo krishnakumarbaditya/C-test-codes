@@ -348,3 +348,29 @@ void count(int a[],int b[],int n)
         }
     }
 }
+or
+//10. Write a function in C to count the frequency of each element of an array.
+#include<stdio.h>
+void count(int[],int[],int,int);
+int main()
+{
+    int a[5]={10,20,10,20,50};
+    int freq[51]={0};
+    count(a,freq,5,51);
+    return 0;
+}
+void count(int a[],int freq[],int n,int n1)
+{
+    int i;
+    for(i=0; i<n; i++)
+    {
+        freq[a[i]]++;
+    }
+    for(i=0; i<n1; i++)
+    {
+         if(freq[i]!=0)
+         {
+            printf("%d ==> %d \n",i,freq[i]);
+         }
+    }
+}
