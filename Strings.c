@@ -209,3 +209,29 @@ int main()
     printf("after sorting the array in ascending order is %s.\n",c);
     return 0;
 }
+
+//10. Write a program in C to Find the Frequency of Characters.
+#include<stdio.h>
+int main()
+{
+    char c[10];
+    int freq[150]={0};
+    int i,j;
+    printf("Find the Frequency of Characters.\n");
+    printf("Enter a string\n");
+    scanf("%s",c);
+    fflush(stdin);
+    for(i=0;c[i];i++);
+    int len=i;
+    for(i=0;i<len;i++)
+    {
+       freq[c[i]]++;
+    }
+    for(i=0;i<150;i++)
+    {
+       if(freq[i]!=0)
+        printf("%c ==> %d\n",i,freq[i]);
+    }
+
+    return 0;
+}
