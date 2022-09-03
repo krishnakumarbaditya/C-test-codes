@@ -186,6 +186,76 @@ int alphanumeric(char ch1[],int l)
 
 }
 
+/*
+7. Write a function to check whether a given string is palindrome or not.
+*/
+void palindrome(char[],int,int);
+#include<stdio.h>
+int main()
+{
+    char ch[20];
+    int i;
+    printf("Enter a string : ");
+    gets(ch);
+    fflush(stdin);
+
+    printf("String is %s.\n",ch);
+    fflush(stdin);
+
+    for(i=0;ch[i];i++);
+    int l = i;
+    palindrome(ch,0,l-1);
+    return 0;
+}
+void palindrome(char ch1[],int i,int l)
+{
+    while(i<=l)
+    {
+        if(ch1[i]!=ch1[l])
+            break;
+        i++;
+        l--;
+    }
+    if(i>l)
+        printf("String is palindrome");
+    else
+        printf("String is not palindrome");
+}
+
+/*
+8. Write a function to count words in a given string
+*/
+void count(char[],int,int);
+#include<stdio.h>
+int main()
+{
+    char ch[20];
+    int i;
+    printf("Enter a string : ");
+    gets(ch);
+    fflush(stdin);
+
+    printf("String is %s.\n",ch);
+    fflush(stdin);
+
+    for(i=0;ch[i];i++);
+    int l = i;
+    count(ch,0,l-1);
+    return 0;
+}
+void count(char ch1[],int i,int l)
+{
+    int count=1;
+    while(i<=l)
+    {
+        if(ch1[i]==' ' && ch1[i+1]!=' ')
+            count++;
+        i++;
+    }
+    printf("Total Word is %d.",count);
+
+}
+
 
 /*
 9. Write a function to reverse a string word wise. (For example if the given string is
@@ -237,3 +307,39 @@ void reverse(char ch1[],int i,int j)
         j--;
     }
 }
+
+/*
+10. Write a function to find the repeated character in a given string
+*/
+void repeated(char[],int[]);
+#include<stdio.h>
+int main()
+{
+    char ch[20];
+    int fr[150]={0};
+    int i;
+    printf("Enter a string : ");
+    gets(ch);
+    fflush(stdin);
+
+    printf("String is %s.\n",ch);
+    fflush(stdin);
+
+    repeated(ch,fr);
+    return 0;
+}
+void repeated(char ch1[],int fr[])
+{
+    int i,flag;
+    for(i=0;ch1[i];i++)
+    {
+        fr[ch1[i]]++;
+    }
+    printf("Repeated elements in array are \n");
+    for(i=0;i<150;i++)
+    {
+        if(fr[i]>1)
+            printf("%c ",i);
+    }
+}
+
