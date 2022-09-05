@@ -185,29 +185,57 @@ int main()
 #include<string.h>
 int main()
 {
-    char c[10][20];
-    int i;
-    printf("check whether all IP addresses are valid.\n");
-    printf("Enter the strings.\n");
-    for(i=0;i<3;i++)
+    char ch[]="127.259.0.1";
+    int i,x;
+    char *a=strtok(ch,".");
+    while(a!=NULL)
     {
-        gets(c[i]);
-    }
-    for(i=0;i<3;i++)
-    {
-        if(strchr(c[i],'@')!=0)
+        int x = atoi(a);
+        if(x>=0 && x<=255)
         {
-            printf("Valid IP addresses are \n");
-            printf("%s\n",c[i]);
+            i++;
         }
-        else
-        {
-            printf("Non-Valid IP addresses are %s",c[i]);
-            printf(" because @ is missing\n");
-        }
+        a = strtok(NULL,".");
     }
+    if(i==4)
+        printf("ip address is valid");
+    else
+        printf("ip address is not valid");
     return 0;
 }
+
+/*
+8. Given a list of words followed by two words, the task is to find the minimum distance
+between the given two words in the list of words.
+(Example : s = {“the”,”quick”,”brown”,”fox”,”quick”}
+ word1 = “the”, word2 = “fox”, OUTPUT : 1 )
+*/
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char word[4][20]={"the","quick","brown","fox","quick"};
+    char word1[]="the";
+    char word2[]="fox";
+    int i,temp;
+    int w1=-1,w2=-1,min=1000;
+    for(i=0;i<4;i++)
+    {
+        if(strcmp(word[i],word1)==0)
+            w1=i;
+        if(strcmp(word[i],word2)==0)
+            w2=i;
+        if(w1!=-1 && w2!=-1)
+        {
+            temp=abs(w2-w1);
+            if(temp<min)
+                min=temp;
+        }
+    }
+    printf("minimum distance between the given two words in the list of words is %d",min-1);
+    return 0;
+}
+
 
 /*
 9. Write a program that asks the user to enter a username. If the username entered is
@@ -248,4 +276,30 @@ int main()
         printf("Username is not found and user is not allowed to calculate the factorial.\n");
     }
 
+}
+
+/*
+10. Create an authentication system. It should be menu driven.
+*/
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char word[3][2][20]={{"krishna","123"},{"rohit","987"},{"rakesh","465"}};
+    char username[]="rakesh";
+    char password[]="45";
+    int i,flag=0;
+    for(i=0;i<4;i++)
+    {
+        if(strcmp(username,word[i][0])==0 && strcmp(password,word[i][1])==0)
+        {
+            printf("Login Successfully !");
+            flag++;
+            break;
+        }
+    }
+    if(flag==0)
+        printf("Login Unsuccessfull !");
+
+    return 0;
 }
